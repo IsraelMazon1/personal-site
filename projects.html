@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Israel Mazon — Projects</title>
+  <meta name="description" content="Selected projects and work." />
+  <script>
+  (function () {
+    const saved = localStorage.getItem("siteTheme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const theme = saved ? saved : (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Projects archive</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="index.html">Front Page</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="panel">
+        <div class="panel-head">Filter</div>
+        <div class="panel-body">
+          <div class="controls">
+            <label>
+              <span class="small muted">Search (press <span class="kbd">/</span>)</span><br />
+              <input class="input" type="search" placeholder="Search projects..." data-project-search />
+            </label>
+
+            <label>
+              <span class="small muted">Tag</span><br />
+              <select class="select" data-project-filter>
+                <option value="all">All</option>
+                <option value="web">Web</option>
+                <option value="data">Data</option>
+                <option value="systems">Systems</option>
+                <option value="embedded">Embedded</option>
+              </select>
+            </label>
+
+            <div class="small muted">
+              Showing <strong data-project-count>0</strong> projects
+            </div>
+          </div>
+
+          <div class="small muted">
+            Click any project to open a full write-up.
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 14px;"></div>
+
+      <div class="card-grid" aria-label="Projects list">
+        <!-- Stock Analyzer -->
+        <a class="card card-link"
+          href="projects/stock-analyzer.html"
+          data-project-card
+          data-tags="web,data"
+          data-text="stock analyzer dashboard risk returns python sql portfolio var sharpe">
+          <h3>Stock Analyzer</h3>
+          <div class="meta">
+            <span class="badge">data</span>
+            <span class="badge">web</span>
+          </div>
+          <p class="small muted">Analyze portfolio risk/returns and visualize key metrics in a dashboard.</p>
+          <p class="small"><span class="muted">Open →</span></p>
+        </a>
+
+        <!-- Chemical Management System -->
+        <a class="card card-link"
+          href="projects/chemical-management.html"
+          data-project-card
+          data-tags="web,data"
+          data-text="chemical management system database postgres node express lab molecules experiments search ui">
+          <h3>Chemical Management System (Under Construction)</h3>
+          <div class="meta">
+            <span class="badge">data</span>
+            <span class="badge">web</span>
+          </div>
+          <p class="small muted">A user-friendly lab database to replace Excel for molecules + experiments.</p>
+          <p class="small"><span class="muted">Open →</span></p>
+        </a>
+
+        <!-- Matching Engine -->
+        <a class="card card-link"
+          href="projects/matching-engine.html"
+          data-project-card
+          data-tags="systems"
+          data-text="matching engine order book low latency c++ ring buffer throughput latency">
+          <h3>Matching Engine</h3>
+          <div class="meta">
+            <span class="badge">systems</span>
+          </div>
+          <p class="small muted">Low-latency order matching with an order book and performance focus.</p>
+          <p class="small"><span class="muted">Open →</span></p>
+        </a>
+
+        <!-- Embedded -->
+        <a class="card card-link"
+          href="projects/embedded-systems.html"
+          data-project-card
+          data-tags="embedded,systems"
+          data-text="embedded systems stm32 nucleo project roadmap gpio interrupts timers uart i2c">
+          <h3>Embedded Systems Project (Under Construction)</h3>
+          <div class="meta">
+            <span class="badge">embedded</span>
+            <span class="badge">systems</span>
+          </div>
+          <p class="small muted">Starter embedded project plan + milestones (GPIO/interrupts/timers/UART).</p>
+          <p class="small"><span class="muted">Open →</span></p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

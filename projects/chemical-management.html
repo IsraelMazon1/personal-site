@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chemical Management System — Israel Mazon</title>
+  <script>
+  (function () {
+    const saved = localStorage.getItem("siteTheme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const theme = saved ? saved : (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Project write-up</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="../index.html">Front Page</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../hobbies.html">Hobbies</a>
+      <a href="../about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../projects.html">← Back to Projects</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head project-title">
+  CHEMICAL MANAGEMENT SYSTEM (UNDER CONSTRUCTION)
+  <img src="../badges/construction_barrier.png" alt="Under Construction" class="title-icon" />
+</div>
+        <div class="panel-body project-hero">
+          <div>
+            <h2 style="margin-top:0;">What it is</h2>
+            <p class="muted">
+              A lab-friendly database + UI designed to replace Excel for tracking molecules,
+              experiments, quantities, and updates with clean search and consistent data entry.
+            </p>
+
+            <h3>Highlights</h3>
+            <ul class="list">
+              <li>Fast search/filter UI for non-technical users</li>
+              <li>Structured molecule records + experiments per lab</li>
+              <li>Data consistency improvements vs. spreadsheets</li>
+            </ul>
+
+            <div style="height:10px;"></div>
+            <a class="btn" href="../projects.html">Back</a>
+            <a class="btn" href="#" rel="noopener">Repo</a>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-head">Tech</div>
+            <div class="panel-body">
+              <ul class="kv">
+                <li><strong>Backend:</strong> Node.js / Express</li>
+                <li><strong>DB:</strong> PostgreSQL</li>
+                <li><strong>Frontend:</strong> HTML/CSS/JS</li>
+              </ul>
+              <div class="chips" style="margin-top:10px;">
+                <span class="chip">data</span>
+                <span class="chip">web</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <div class="panel">
+        <div class="panel-head">Key features</div>
+        <div class="panel-body">
+          <ul>
+            <li>Molecule records (ID, name, structure image, properties)</li>
+            <li>Experiment entries linked to molecules</li>
+            <li>Role-based access (optional)</li>
+            <li>Standardized required fields to prevent messy data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

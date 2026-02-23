@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matching Engine — Israel Mazon</title>
+  <script>
+  (function () {
+    const saved = localStorage.getItem("siteTheme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const theme = saved ? saved : (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Project write-up</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="../index.html">Front Page</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../hobbies.html">Hobbies</a>
+      <a href="../about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../projects.html">← Back to Projects</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">Matching Engine</div>
+        <div class="panel-body project-hero">
+          <div>
+            <h2 style="margin-top:0;">What it is</h2>
+            <p class="muted">
+              A single-threaded, low-latency C++ matching engine prototype implementing a price-time priority limit 
+              order book. Built to explore exchange microstructure, concurrency, and measurable latency/throughput tradeoffs.
+            </p>
+
+            <h3>Highlights</h3>
+            <ul class="list">
+              <li>Price–time priority limit order book (best bid/ask tracking)</li>
+              <li>Supports limit, market, and cancel orders</li>
+              <li>Dual benchmarking modes: saturation (max throughput) and controlled latency</li>
+              <li>Percentile latency measurement (p50 / p90 / p99)</li>
+            </ul>
+
+            <div style="height:10px;"></div>
+            <a class="btn" href="../projects.html">Back</a>
+            <a class="btn" href="https://github.com/IsraelMazon1/nano_matching_engine" rel="noopener">Repo</a>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-head">Tech</div>
+            <div class="panel-body">
+              <ul class="kv">
+                <li><strong>Language:</strong> C++</li>
+                <li><strong>Focus:</strong> latency + throughput</li>
+                <li><strong>Core:</strong> price-time matcher and order book</li>
+                <li><strong>Concurrency:</strong>lock-free SPSC queue</li>
+              </ul>
+              <div class="chips" style="margin-top:10px;">
+                <span class="chip">systems</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <div class="panel">
+        <div class="panel-head">Design notes</div>
+        <div class="panel-body">
+          <div class="panel">
+  <div class="panel-head">Build & Run</div>
+  <div class="panel-body">
+
+    <!-- COMMAND BLOCK (COPYABLE) -->
+    <div class="terminal-wrapper">
+      <button class="copy-btn" data-copy>
+        Copy
+      </button>
+
+<div class="terminal" data-copy-content>
+<pre>
+g++ -O3 -std=c++20 -pthread nanobook.cpp -o nanobook
+./nanobook --bench 5000000 --mode latency --target-q 1024
+</pre>
+</div>
+    </div>
+
+  </div>
+</div>
+
+
+<div style="height:14px;"></div>
+
+<div class="panel">
+  <div class="panel-head">Benchmark Output</div>
+  <div class="panel-body">
+
+    <!-- OUTPUT BLOCK (NOT COPYABLE) -->
+<div class="terminal">
+<pre>
+Benchmark (MacBook Air, C++20, -O3, 5,000,000 msgs, latency mode, target queue=1024)
+
+Throughput: ~9.7M msgs/s
+E2E latency: p50 0.104 ms · p90 0.113 ms · p99 0.171 ms
+Engine latency: p99 250 ns
+</pre>
+</div>
+
+  </div>
+</div>
+          <ul>
+            <li>Order types: Limit, Market, Cancel</li>
+            <li>Matching rule: Strict price-time priority (FIFO per price level)</li>
+            <li>Concurrency model: Single matching thread + lock-free producer queue</li>
+            <li>Benchmark results (MacBook Air M-series): ~9M msgs/sec throughput (saturation mode), ~0.20 ms p99 end-to-end latency (controlled queue depth), &lt;300 ns p99 engine processing time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

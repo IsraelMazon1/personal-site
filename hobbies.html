@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Israel Mazon — Hobbies</title>
+
+  <!-- Prevent dark mode flash -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem("siteTheme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = saved ? saved : (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Outside of coding</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="index.html">Front Page</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html" aria-current="page">Hobbies</a>
+      <a href="about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container grid">
+
+      <!-- Sidebar -->
+      <aside class="panel">
+        <div class="panel-head">Quick Facts</div>
+        <div class="panel-body">
+          <ul class="list">
+            <li><strong>Peak Rocket League Ranks:</strong> Champ 3 (One game off GC)</li>
+            <li><strong>Highest Grade Climbed:</strong> V9</li>
+            <li><strong>Home Gym:</strong> North Mass Boulder</li>
+          </ul>
+
+          <div style="height:10px;"></div>
+
+          <p class="small muted">
+            Balance matters. Performance mindset applies everywhere.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main Hobby Content -->
+      <section>
+
+        <!-- Climbing -->
+        <div class="panel">
+  <div class="panel-head">Climbing</div>
+  <div class="panel-body">
+    <div class="media">
+      <img class="media-img" src="badges/climb.png" alt="Climbing" />
+
+      <div class="media-text">
+        <p>
+          I enjoy bouldering. The technical and route reading demands are nearly as high as the physical ones, which I like. It’s also a great way to disconnect and reset.
+        </p>
+
+        <div style="height:10px;"></div>
+
+        <a class="btn" href="hobbies/climbing.html">
+          Watch Climbing Clips →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div style="height:14px;"></div>
+
+        <!-- Gaming -->
+<div class="panel">
+  <div class="panel-head">Gaming</div>
+  <div class="panel-body">
+    <div class="media">
+      <img class="media-img" src="badges/octabadge.png" alt="rocket league octane" />
+
+      <div class="media-text">
+        <p>
+         Rocket league is probably my favorite competitive game of all time. I particularly enjoy the high skill ceiling and the inclusion of soccer (childhood sport)
+        </p>
+
+        <div style="height:10px;"></div>
+
+        <a class="btn" href="hobbies/rocket-league.html">
+          Watch Rocket League Clips →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div style="height:14px;"></div>
+
+        <!-- Learning -->
+        <div class="panel">
+  <div class="panel-head">Learning</div>
+  <div class="panel-body">
+    <div class="media">
+      <img class="media-img" src="badges/pcb.png" alt="pcb" />
+
+      <div class="media-text">
+        <p>
+          Currently looking into embedded systems and hardware projects.
+        </p>
+      </div>
+    </div>
+    <div class="chips"></div>
+      <span class="chip">Embedded Systems</span>
+      <span class="chip">Low Latency</span>
+      <span class="chip">Hardware + Software</span>
+    </div>
+  </div>
+</div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

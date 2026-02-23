@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Israel Mazon | Home</title>
+  <meta name="description" content="Personal website: projects, hobbies, and about me." />
+  <script>
+  (function () {
+    const saved = localStorage.getItem("siteTheme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const theme = saved ? saved : (prefersDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true" href="index.html">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Software • Data • Learning</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="index.html" aria-current="page">Front Page</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container grid">
+      <!-- Sidebar -->
+      <aside class="panel">
+        <div class="panel-head">Quick Links</div>
+        <div class="panel-body">
+          <ul class="list">
+            <li><a href="projects/stock-analyzer.html">stock analyzer</a></li>
+            <li><a href="hobbies-videos/rocket-league.html">Recent rocket league clips</a></li>
+            <li><a href="hobbies-videos/climbing.html">Climbing clips</a></li>
+          </ul>
+
+          <div style="height: 12px;"></div>
+
+          <div class="callout small">
+            <strong>Tip:</strong> press <span class="kbd">/</span> on the Projects page to jump to search.
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+<section class="panel hero">
+  <div class="panel-head">Welcome</div>
+  <div class="panel-body">
+
+    <div class="hero-content">
+      <img class="portrait" src="portrait/portrait.PNG" alt="portrait" />
+
+      <div class="hero-text">
+        <h2>Hi I’m <span style="color: var(--accent);">Israel</span>.</h2>
+        <p class="muted">This site is a personal portfolio and showcase of my work.</p>
+
+        <p>
+          I enjoy building <strong>software</strong>, analyzing <strong>data</strong>, and learning anything and everything.
+          If you’re here for work: start with <a href="projects.html">Projects</a>.
+        </p>
+
+        <div class="chips" aria-label="Highlights">
+          <span class="chip">Performance-minded</span>
+          <span class="chip">Driven</span>
+          <span class="chip">Always learning</span>
+        </div>
+      </div>
+    </div>
+
+          <div style="height: 14px;"></div>
+
+          <div class="panel">
+            <div class="panel-head">Now</div>
+            <div class="panel-body">
+              <ul class="list">
+                <li><strong>Currently:</strong> Learning embedded systems.</li>
+                <li><strong>Reading/learning:</strong> Embedded systems, ML, etc.</li>
+                <li><strong>Building:</strong> Temperature/Light Monitor (Sensor + I2C + Logging)</li>
+              </ul>
+            </div>
+          </div>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

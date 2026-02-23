@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Israel — About</title>
+  <meta name="description" content="About me and contact links." />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("siteTheme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        const theme = saved ? saved : (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true" href="index.html">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">About & contact</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="index.html">Front Page</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="about.html" aria-current="page">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container grid">
+      <aside class="panel">
+        <div class="panel-head">Contact</div>
+        <div class="panel-body">
+          <ul class="list">
+            <li><strong>Email:</strong> <a href="mailto:israelmazon14@gmail.com">israelmazon14@gmail.com</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/israelmazon1" rel="noopener">israelmazon1</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/israel-mazon-740147206/" rel="noopener">Israel Mazon</a></li>
+          </ul>
+
+          <div style="height: 12px;"></div>
+        </div>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-head">About me</div>
+        <div class="panel-body">
+          <h2 style="margin-top:0;">Background</h2>
+          <p>
+            I'm a computer science student at Purdue University graduating in May 2026, with interests in data science, 
+            embedded systems, and software engineering. I am interested in working on full-stack applications, data pipelines, 
+            machine learning projects, embedded systems and learning as much as I can.
+          </p>
+          <p>I am passionate about the process of struggling through projects and coming out as a better version of myself. 
+            I tend to return to projects often as I never necessarily view projects as "complete" but rather as ongoing learning experiences.</p>
+          <p>
+            Outside of coding, I enjoy climbing, playing Rocket League, and reading/learning new things. 
+          </p>
+
+          <div class="panel">
+            <div class="panel-head">What I enjoy</div>
+            <div class="panel-body">
+              <div class="chips">
+                <span class="chip">Backend</span>
+                <span class="chip">Databases</span>
+                <span class="chip">Data/ML</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 12px;"></div>
+
+          <div class="panel">
+            <div class="panel-head">This site</div>
+            <div class="panel-body">
+              <p class="small muted">
+                Retro-modern style (fixed container, strong borders) and modern touches (responsive, dark mode, search).
+                No frameworks required.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rocket League Clips — Israel Mazon</title>
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem("siteTheme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = saved ? saved : (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Hobby clips</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="../index.html">Front Page</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../hobbies.html" aria-current="page">Hobbies</a>
+      <a href="../about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../hobbies.html">← Back to Hobbies</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">Rocket League Clips</div>
+        <div class="panel-body">
+          <p class="muted small">Some of my favorites.</p>
+
+          <div class="video-grid">
+            <div class="video-card">
+              <h3>Ceiling Double Tap</h3>
+              <video controls preload="metadata" playsinline>
+                <source src="../rl-clips/rl1.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="video-card">
+              <h3>Double Tap (Good Angle)</h3>
+              <video controls preload="metadata" playsinline>
+                <source src="../rl-clips/rl2.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="video-card">
+              <h3>Musty</h3>
+              <video controls preload="metadata" playsinline>
+                <source src="../rl-clips/rl3.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <div class="video-card">
+              <h3>Arsenal Reset</h3>
+              <video controls preload="metadata" playsinline>
+                <source src="../rl-clips/rl4.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+      <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

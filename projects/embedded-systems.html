@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Embedded Radar System — Israel Mazon</title>
+
+  <script>
+    (function () {
+      const saved = localStorage.getItem("siteTheme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      const theme = saved ? saved : (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="site-badge" aria-hidden="true">IM</div>
+      <div class="site-title">
+        <h1>Israel Mazon</h1>
+        <p class="tagline">Project write-up</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a href="../index.html">Front Page</a>
+      <a href="../projects.html" aria-current="page">Projects</a>
+      <a href="../hobbies.html">Hobbies</a>
+      <a href="../about.html">About</a>
+      <span class="spacer"></span>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark Mode</button>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../projects.html">← Back to Projects</a>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head project-title">
+          Embedded Radar System (Under Construction)
+          <img src="../badges/construction_barrier.png" alt="Under construction" class="title-icon" />
+        </div>
+
+        <div class="panel-body project-hero">
+          <div>
+            <h2 style="margin-top:0;">What it is</h2>
+            <p class="muted">
+              An interrupt-driven embedded system on an ESP32 that performs real-time distance scanning using an ultrasonic
+              sensor mounted on a servo motor. The system sweeps a 180° field of view, samples distance at precise
+              intervals, and renders a live radar-style visualization on an SSD1306 OLED. Distance data can also be
+              streamed over WiFi to a lightweight web dashboard for monitoring and analysis.
+            </p>
+
+            <h3>Highlights</h3>
+            <ul class="list">
+              <li>Interrupt-timed ultrasonic distance capture (echo pulse measured in ISR)</li>
+              <li>Servo-based 180° sweep with synchronized sampling at fixed angular increments</li>
+              <li>Real-time radar visualization on SSD1306 OLED (angle + distance plotted live)</li>
+              <li>Optional WiFi telemetry to a simple web dashboard (remote viewing + debugging)</li>
+            </ul>
+
+            <div style="height:10px;"></div>
+            <a class="btn" href="../projects.html">Back</a>
+            <a class="btn" href="#" rel="noopener">Repo (soon)</a>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-head">Tech</div>
+            <div class="panel-body">
+              <ul class="kv">
+                <li><strong>MCU:</strong> ESP32</li>
+                <li><strong>Hardware:</strong> HC-SR04 + SG90 servo + SSD1306 OLED</li>
+                <li><strong>Language:</strong> C++ (Arduino framework)</li>
+                <li><strong>RTOS:</strong> FreeRTOS tasks + ISRs</li>
+                <li><strong>Peripherals:</strong> I2C (OLED), PWM (servo), GPIO/interrupts (echo)</li>
+                <li><strong>Networking:</strong> WiFi + lightweight HTTP telemetry (optional)</li>
+              </ul>
+              <div class="chips" style="margin-top:10px;">
+                <span class="chip">embedded</span>
+                <span class="chip">realtime</span>
+                <span class="chip">systems</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <div class="panel">
+        <div class="panel-head">How it works</div>
+        <div class="panel-body">
+          <ul class="list">
+            <li><strong>Sensor acquisition (interrupt-driven):</strong> Trigger pulse → ISR timestamps echo pulse width → distance computed via time-of-flight and pushed into a circular buffer.</li>
+            <li><strong>Servo sweep control:</strong> A timed control loop steps the servo across 180°; each step triggers a synchronized sample to produce angle-distance pairs.</li>
+            <li><strong>Display + telemetry:</strong> Samples render in real-time on the OLED; optionally broadcast over WiFi to a small web dashboard.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <div class="panel">
+        <div class="panel-head">Concurrency model</div>
+        <div class="panel-body">
+          <ul class="list">
+            <li><strong>High priority:</strong> Sensor task (process ISR events, compute distance, buffer samples)</li>
+            <li><strong>Medium priority:</strong> Control task (servo timing + sweep scheduling)</li>
+            <li><strong>Low priority:</strong> UI task (OLED rendering)</li>
+            <li><strong>Low priority:</strong> Network task (optional HTTP telemetry)</li>
+          </ul>
+          <p class="small muted" style="margin-top:10px;">
+            Goal: deterministic sampling with minimal jitter, avoiding blocking delays by separating time-critical capture
+            from rendering and networking.
+          </p>
+        </div>
+      </div>
+
+      <div style="height:14px;"></div>
+
+      <div class="panel">
+        <div class="panel-head">Key technical targets</div>
+        <div class="panel-body">
+          <ul class="list">
+            <li><strong>Sampling frequency:</strong> ~200 Hz per sweep (target)</li>
+            <li><strong>ISR latency:</strong> &lt; 10 µs (target)</li>
+            <li><strong>Buffering:</strong> circular buffer architecture (lock-free handoff from ISR/task)</li>
+            <li><strong>End-to-end measurement latency:</strong> ~1–2 ms (target)</li>
+            <li><strong>Validation:</strong> verify timing/interrupt precision with logic analyzer (planned)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+      <footer class="footer">
+    <div class="container">
+      Built with plain HTML/CSS/JS • <a href="https://www.linkedin.com/in/israel-mazon-740147206/">LinkedIn</a> | <a href="https://github.com/israelmazon1">GitHub</a>
+    </div>
+  </footer>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
